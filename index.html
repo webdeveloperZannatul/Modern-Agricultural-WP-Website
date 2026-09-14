@@ -1,0 +1,2082 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGROVERDE | European Agricultural Machinery & Engineering Systems</title>
+  <meta name="description" content="Leading European engineering brand delivering heavy-duty flail mowers, rotary tillers, precision vineyard shredders and agricultural automation solutions.">
+  
+  <!-- Google Fonts: Inter & Outfit for modern high-end European industrial aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 & Tailwind CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f7f3',
+              100: '#daede1',
+              200: '#b8dc27',
+              500: '#1e7542',
+              600: '#145c32',
+              700: '#104b28',
+              800: '#0e3b21',
+              900: '#092515',
+              accent: '#34a853',
+              amber: '#d97706',
+              earth: '#8b6f4e'
+            },
+            charcoal: {
+              800: '#1a1f1d',
+              900: '#111413',
+              950: '#0a0d0c'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Premium smooth backdrop & industrial styling */
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .badge-iso {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .hero-glow {
+      background: radial-gradient(circle at 30% 50%, rgba(20, 92, 50, 0.45) 0%, rgba(10, 13, 12, 0.85) 75%);
+    }
+    /* Modal active states */
+    .tab-active {
+      border-bottom: 2px solid #145c32;
+      color: #145c32;
+      font-weight: 600;
+    }
+    .page-view {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out;
+    }
+    .page-view.active {
+      display: block;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-800 bg-[#fdfdfd] antialiased selection:bg-brand-600 selection:text-white flex flex-col min-h-screen">
+
+  <!-- ================= TOP SLIM UTILITY BAR ================= -->
+  <div class="bg-charcoal-900 text-gray-300 text-xs py-2 px-4 border-b border-white/10 hidden md:block">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-6">
+        <span class="flex items-center gap-2 hover:text-white transition">
+          <i class="fa-solid fa-phone text-brand-accent"></i> +39 (0)141 876 220 / Direct Sales
+        </span>
+        <span class="flex items-center gap-2 hover:text-white transition">
+          <i class="fa-solid fa-envelope text-brand-accent"></i> export@agroverde-machinery.eu
+        </span>
+        <span class="flex items-center gap-2">
+          <i class="fa-solid fa-location-dot text-brand-accent"></i> Bologna &middot; Asti Industrial Park, Italy
+        </span>
+      </div>
+      <div class="flex items-center space-x-5">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-clock text-gray-400"></i> Central European Time (CET) Mon-Fri: 08:00 - 18:30
+        </div>
+        <div class="h-3 w-px bg-white/20"></div>
+        <!-- Language Switcher -->
+        <div class="relative group">
+          <button class="flex items-center gap-1.5 font-medium hover:text-white uppercase tracking-wider text-[11px]" id="langBtn">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span> EN <i class="fa-solid fa-chevron-down text-[9px] ml-0.5"></i>
+          </button>
+          <div class="absolute right-0 top-full mt-2 w-28 bg-charcoal-900 border border-white/10 shadow-xl rounded py-1 z-50 hidden group-hover:block text-xs">
+            <a href="javascript:void(0)" onclick="switchLang('EN')" class="block px-3 py-1.5 hover:bg-brand-700 text-white font-medium">English (EN)</a>
+            <a href="javascript:void(0)" onclick="switchLang('IT')" class="block px-3 py-1.5 hover:bg-brand-700 text-gray-200">Italiano (IT)</a>
+            <a href="javascript:void(0)" onclick="switchLang('DE')" class="block px-3 py-1.5 hover:bg-brand-700 text-gray-200">Deutsch (DE)</a>
+            <a href="javascript:void(0)" onclick="switchLang('FR')" class="block px-3 py-1.5 hover:bg-brand-700 text-gray-200">Français (FR)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= STICKY MAIN HEADER ================= -->
+  <header class="sticky top-0 z-50 glass-nav border-b border-gray-200/80 transition-all duration-300 shadow-sm" id="mainHeader">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Premium Brand Identity -->
+        <a href="javascript:void(0)" onclick="navigateTo('home')" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-lg bg-brand-700 flex items-center justify-center text-white shadow-md shadow-brand-700/20 group-hover:bg-brand-800 transition">
+            <i class="fa-solid fa-wheat-awn text-xl text-emerald-300"></i>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-display font-extrabold text-2xl tracking-tight text-charcoal-900 leading-none">
+              AGRO<span class="text-brand-600">VERDE</span>
+            </span>
+            <span class="text-[9.5px] uppercase tracking-[0.22em] text-gray-500 font-semibold mt-1">
+              European Agricultural Engineering
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-7 font-medium text-sm text-gray-700">
+          <a href="javascript:void(0)" onclick="navigateTo('home')" class="nav-link hover:text-brand-600 transition py-1 border-b-2 border-brand-600 font-semibold text-brand-700" data-page="home">Home</a>
+          
+          <!-- Products Dropdown Link -->
+          <div class="relative group py-2">
+            <a href="javascript:void(0)" onclick="navigateTo('products')" class="nav-link hover:text-brand-600 transition flex items-center gap-1.5 py-1" data-page="products">
+              Products <i class="fa-solid fa-chevron-down text-[10px] text-gray-400 group-hover:text-brand-600 transition group-hover:rotate-180"></i>
+            </a>
+            <div class="absolute left-0 top-full w-64 bg-white border border-gray-100 shadow-2xl rounded-xl py-2 hidden group-hover:block transition-all">
+              <a href="javascript:void(0)" onclick="filterAndOpenProducts('mowers')" class="block px-4 py-2.5 text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-700 font-medium">
+                <i class="fa-solid fa-scissors mr-2 text-brand-600"></i> Heavy Flail Mowers & Shredders
+              </a>
+              <a href="javascript:void(0)" onclick="filterAndOpenProducts('rotary')" class="block px-4 py-2.5 text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-700 font-medium">
+                <i class="fa-solid fa-arrows-spin mr-2 text-brand-600"></i> Rotary Tillers & Power Harrows
+              </a>
+              <a href="javascript:void(0)" onclick="filterAndOpenProducts('woodchipper')" class="block px-4 py-2.5 text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-700 font-medium">
+                <i class="fa-solid fa-tree mr-2 text-brand-600"></i> Wood Chippers & Forestry Units
+              </a>
+              <a href="javascript:void(0)" onclick="filterAndOpenProducts('winter')" class="block px-4 py-2.5 text-xs text-gray-700 hover:bg-brand-50 hover:text-brand-700 font-medium">
+                <i class="fa-regular fa-snowflake mr-2 text-brand-600"></i> Snow Blades & Winter Clearing
+              </a>
+              <div class="border-t border-gray-100 my-1"></div>
+              <a href="javascript:void(0)" onclick="navigateTo('products')" class="block px-4 py-2 text-xs text-brand-700 font-semibold hover:underline">
+                View Complete Machinery Range &rarr;
+              </a>
+            </div>
+          </div>
+
+          <a href="javascript:void(0)" onclick="navigateTo('services')" class="nav-link hover:text-brand-600 transition py-1" data-page="services">OEM & Services</a>
+          <a href="javascript:void(0)" onclick="navigateTo('about')" class="nav-link hover:text-brand-600 transition py-1" data-page="about">Company</a>
+          <a href="javascript:void(0)" onclick="navigateTo('catalogs')" class="nav-link hover:text-brand-600 transition py-1" data-page="catalogs">Tech Catalogs</a>
+          <a href="javascript:void(0)" onclick="navigateTo('news')" class="nav-link hover:text-brand-600 transition py-1" data-page="news">News & Field Fairs</a>
+          <a href="javascript:void(0)" onclick="navigateTo('contact')" class="nav-link hover:text-brand-600 transition py-1" data-page="contact">Contact</a>
+        </nav>
+
+        <!-- Right Action Items -->
+        <div class="hidden lg:flex items-center space-x-4">
+          <!-- Search trigger -->
+          <button onclick="toggleSearchModal()" aria-label="Search Catalog" class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:border-brand-600 hover:text-brand-600 transition">
+            <i class="fa-solid fa-magnifying-glass text-sm"></i>
+          </button>
+
+          <!-- Quote Modal Trigger -->
+          <button onclick="openQuoteModal()" class="bg-brand-600 hover:bg-brand-700 active:scale-95 text-white text-xs font-semibold uppercase tracking-wider px-5 py-3 rounded-lg shadow-md shadow-brand-600/25 transition duration-200 flex items-center gap-2">
+            <span>Get a Quote</span>
+            <i class="fa-solid fa-arrow-right-long text-xs"></i>
+          </button>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <div class="flex items-center gap-3 lg:hidden">
+          <button onclick="toggleSearchModal()" class="w-9 h-9 rounded-lg border border-gray-200 flex items-center justify-center text-gray-700">
+            <i class="fa-solid fa-magnifying-glass text-sm"></i>
+          </button>
+          <button onclick="toggleMobileMenu()" class="p-2 text-gray-700 focus:outline-none" aria-label="Open Mobile Menu">
+            <i class="fa-solid fa-bars-staggered text-xl" id="menuIcon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-200 bg-white px-4 pt-3 pb-6 space-y-3 shadow-xl">
+      <a href="javascript:void(0)" onclick="navigateTo('home'); toggleMobileMenu();" class="block py-2 text-base font-semibold text-brand-700">Home</a>
+      <a href="javascript:void(0)" onclick="navigateTo('products'); toggleMobileMenu();" class="block py-2 text-base font-medium text-gray-700">Machinery & Implements</a>
+      <a href="javascript:void(0)" onclick="navigateTo('services'); toggleMobileMenu();" class="block py-2 text-base font-medium text-gray-700">Services & Spare Parts</a>
+      <a href="javascript:void(0)" onclick="navigateTo('about'); toggleMobileMenu();" class="block py-2 text-base font-medium text-gray-700">About Agroverde</a>
+      <a href="javascript:void(0)" onclick="navigateTo('catalogs'); toggleMobileMenu();" class="block py-2 text-base font-medium text-gray-700">Download Catalogs</a>
+      <a href="javascript:void(0)" onclick="navigateTo('news'); toggleMobileMenu();" class="block py-2 text-base font-medium text-gray-700">Events & Field Trials</a>
+      <a href="javascript:void(0)" onclick="navigateTo('contact'); toggleMobileMenu();" class="block py-2 text-base font-medium text-gray-700">Dealer Network & Contacts</a>
+      <div class="pt-2">
+        <button onclick="openQuoteModal(); toggleMobileMenu();" class="w-full bg-brand-600 text-white font-medium py-3 rounded-lg flex items-center justify-center gap-2">
+          <span>Request B2B Technical Quotation</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= SEARCH OVERLAY MODAL ================= -->
+  <div id="searchModal" class="fixed inset-0 bg-charcoal-950/70 backdrop-blur-sm z-50 hidden flex items-start justify-center pt-24 px-4 transition-all">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-6 transform transition-all">
+      <div class="flex items-center justify-between border-b pb-4">
+        <div class="flex items-center gap-3 text-brand-700 font-bold">
+          <i class="fa-solid fa-microchip"></i>
+          <span>Global Equipment & Parts Database Search</span>
+        </div>
+        <button onclick="toggleSearchModal()" class="text-gray-400 hover:text-gray-700">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+      <div class="mt-4 relative">
+        <input type="text" id="liveSearchInput" onkeyup="handleLiveSearch()" placeholder="Type implement code, tractor HP, mower model (e.g. EFGC, SPN, 75 HP)..." class="w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-300 rounded-xl focus:bg-white focus:ring-2 focus:ring-brand-600 focus:outline-none text-sm">
+        <i class="fa-solid fa-magnifying-glass absolute left-4 top-4 text-gray-400"></i>
+      </div>
+      <div id="searchResults" class="mt-4 divide-y divide-gray-100 max-h-60 overflow-y-auto text-sm text-gray-600">
+        <p class="py-3 text-xs text-gray-400">Quick hits: <em>SPN Snow Blade</em>, <em>EFGC Heavy Shredder</em>, <em>ECO-16H Wood Chipper</em>, <em>Hydraulic PTO Kits</em></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= QUOTE REQUEST MODAL ================= -->
+  <div id="quoteModal" class="fixed inset-0 bg-charcoal-950/75 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-gray-100">
+      <button onclick="closeQuoteModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700">
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+      <div class="mb-4">
+        <span class="text-xs uppercase font-bold tracking-wider text-brand-600 bg-brand-50 px-2.5 py-1 rounded">Direct Factory Proposal</span>
+        <h3 class="font-display text-2xl font-bold text-gray-900 mt-2">Request Technical Quotation</h3>
+        <p class="text-xs text-gray-500">Provide tractor specs or implement models. Our European sales engineers reply within 4 hours.</p>
+      </div>
+      <form onsubmit="handleQuoteSubmit(event)" class="space-y-3.5">
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-gray-700 mb-1">Company / Farm Name *</label>
+            <input required type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-700 mb-1">Country / Region *</label>
+            <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
+              <option>Italy</option>
+              <option>Germany</option>
+              <option>France</option>
+              <option>Spain</option>
+              <option>Poland</option>
+              <option>Other European Country</option>
+              <option>Export (Non-EU)</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-gray-700 mb-1">Contact Email *</label>
+            <input required type="email" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-700 mb-1">Phone Number</label>
+            <input type="tel" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none" placeholder="+39 ...">
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-gray-700 mb-1">Primary Machinery Category of Interest</label>
+          <select id="quoteCategorySelect" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
+            <option value="EFGC Mower">EFGC Series - Flail Mowers & Mulchers</option>
+            <option value="SPN Snow Blade">SPN Hydraulic Angle Snow Plows</option>
+            <option value="ECO-16H Chipper">ECO-16H Autonomous Wood Chippers</option>
+            <option value="ATV Line">ATV/UTV Trailed Flail Systems</option>
+            <option value="Spare Parts & PTO">Original OEM Transmission & Blades</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-gray-700 mb-1">Tractor HP & Technical Specifications</label>
+          <textarea rows="3" placeholder="e.g. 55-80 HP, Category II 3-point hitch, hydraulic remote valves required..." class="w-full border border-gray-300 rounded-lg p-2.5 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none"></textarea>
+        </div>
+        <div class="flex items-center gap-2 pt-1">
+          <input type="checkbox" required id="quoteGdpr" class="rounded text-brand-600 focus:ring-brand-500 text-xs">
+          <label for="quoteGdpr" class="text-[11px] text-gray-500">I agree to the processing of personal data under EU GDPR regulations.</label>
+        </div>
+        <button type="submit" class="w-full bg-brand-700 hover:bg-brand-800 text-white font-medium py-3 rounded-lg text-xs uppercase tracking-wider shadow-md transition">
+          Transmit Quotation Request
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ############################################################# -->
+  <!-- #################### MAIN VIEWS CONTAINER ################### -->
+  <!-- ############################################################# -->
+  <main class="flex-grow">
+
+    <!-- ======================================================== -->
+    <!-- VIEW: 1. HOME PAGE -->
+    <!-- ======================================================== -->
+    <div id="view-home" class="page-view active">
+      
+      <!-- HERO SECTION -->
+      <section class="relative min-h-[580px] lg:min-h-[660px] flex items-center bg-charcoal-950 overflow-hidden text-white">
+        <!-- Background Image with authentic European vineyard tractor action -->
+          <img src="https://i.ibb.co.com/6c0GYMtP/slide3.jpg?q=80&w=2000&auto=format&fit=crop" 
+          alt="Heavy duty green agricultural tractor working in vineyards" 
+          class="absolute inset-0 w-full h-full object-cover object-center opacity-45 scale-105 transition duration-1000"
+          loading="eager"
+        >
+      <!--   <img 
+          src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=2000&auto=format&fit=crop" 
+          alt="Heavy duty green agricultural tractor working in vineyards" 
+          class="absolute inset-0 w-full h-full object-cover object-center opacity-45 scale-105 transition duration-1000"
+          loading="eager"
+        > -->
+        <!-- Angular gradient overlay for industrial distinction -->
+        <div class="absolute inset-0 bg-gradient-to-r from-charcoal-50 via-charcoal-90/90 to-transparent lg:w-3/4"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal-50 via-transparent to-transparent"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-brand-500/20 border border-brand-500/40 text-emerald-300 text-xs font-semibold tracking-wide uppercase mb-6 backdrop-blur-md">
+              <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+              European Engineering Excellence &middot; Certified ISO 9001
+            </div>
+
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white uppercase leading-[1.1]">
+              Engineered For <br>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-200">Demanding Soil</span> &amp; Precision Fieldwork
+            </h1>
+
+            <p class="mt-6 text-base sm:text-lg text-gray-300 font-light leading-relaxed max-w-xl">
+              Professional agricultural implements manufactured in northern Italy. From high-inertia vineyard flail mowers to independent hydraulic chippers and commercial snow blades.
+            </p>
+
+            <div class="mt-9 flex flex-wrap items-center gap-4">
+              <button onclick="navigateTo('products')" class="px-7 py-3.5 bg-brand-600 hover:bg-brand-500 text-white rounded-lg text-sm font-semibold uppercase tracking-wider shadow-lg shadow-brand-700/40 transition active:scale-95 flex items-center gap-2">
+                <span>Explore Implements Range</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </button>
+              <button onclick="navigateTo('about')" class="px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-lg text-sm font-semibold uppercase tracking-wider backdrop-blur transition active:scale-95">
+                Our Heritage &amp; Factory
+              </button>
+            </div>
+
+            <!-- Mini specs bar -->
+            <div class="mt-12 pt-8 border-t border-white/15 grid grid-cols-3 gap-6 text-left">
+              <div>
+                <p class="text-2xl font-bold font-display text-white">9,000+</p>
+                <p class="text-xs text-gray-400 mt-1">Implements Built Annually</p>
+              </div>
+              <div>
+                <p class="text-2xl font-bold font-display text-emerald-400">92%</p>
+                <p class="text-xs text-gray-400 mt-1">Exported across 36 Nations</p>
+              </div>
+              <div>
+                <p class="text-2xl font-bold font-display text-white">48hr</p>
+                <p class="text-xs text-gray-400 mt-1">Express OEM Parts Delivery</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 4-ITEM TRUST & BENEFIT STRIP -->
+      <section class="bg-brand-900 border-b border-brand-800 text-white py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
+            <div class="flex items-center gap-3.5">
+              <div class="w-10 h-10 rounded-lg bg-brand-800 flex items-center justify-center text-emerald-400 text-lg flex-shrink-0">
+                <i class="fa-solid fa-certificate"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-white">ISO 9001 Certified</h4>
+                <p class="text-[11px] text-emerald-200/80">Certified manufacturing process</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3.5">
+              <div class="w-10 h-10 rounded-lg bg-brand-800 flex items-center justify-center text-emerald-400 text-lg flex-shrink-0">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-white">3-Year Frame Warranty</h4>
+                <p class="text-[11px] text-emerald-200/80">Structural robotic welding</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3.5">
+              <div class="w-10 h-10 rounded-lg bg-brand-800 flex items-center justify-center text-emerald-400 text-lg flex-shrink-0">
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-white">European Dealer Hub</h4>
+                <p class="text-[11px] text-emerald-200/80">Over 320 authorized centers</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3.5">
+              <div class="w-10 h-10 rounded-lg bg-brand-800 flex items-center justify-center text-emerald-400 text-lg flex-shrink-0">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-white">Full Spare Availability</h4>
+                <p class="text-[11px] text-emerald-200/80">Guaranteed parts for 15+ years</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 PILLARS: NEW PRODUCTS / FAIRS / FIELD VIDEO -->
+      <section class="py-14 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Card 1 -->
+            <div onclick="filterAndOpenProducts('all')" class="group cursor-pointer bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/70 hover:shadow-xl transition-all duration-300">
+              <div class="relative h-56 overflow-hidden">
+                <img src="https://www.geo-agric.com/filez/macchineJpg/39/Yamaha-GeoAgricol-131-20250806092419.b.jpg?q=80&w=800&auto=format&fit=crop" alt="ATV Mower machinery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                <span class="absolute top-3 left-3 bg-brand-600 text-white font-bold text-[10px] tracking-wider uppercase px-2.5 py-1 rounded">2025 Edition</span>
+              </div>
+              <div class="p-6">
+                <h3 class="font-display font-bold text-lg text-charcoal-900 group-hover:text-brand-600 transition flex items-center justify-between">
+                  <span>ATV & Compact Shredders</span>
+                  <i class="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transform translate-x-1 transition"></i>
+                </h3>
+                <p class="mt-2 text-xs text-gray-500 leading-relaxed">Tow-behind flail mowers equipped with independent Briggs &amp; Stratton engines for orchards and pastures.</p>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div onclick="navigateTo('news')" class="group cursor-pointer bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/70 hover:shadow-xl transition-all duration-300">
+              <div class="relative h-56 overflow-hidden">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThHDHd5BYP3pw54uiPSJxXWax6i2Vv8eItLR6S6pEGJNwyvg0-6U4JBA7b&s=10?q=80&w=800&auto=format&fit=crop" alt="Agritechnica Trade Fair" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                <span class="absolute top-3 left-3 bg-charcoal-900 text-white font-bold text-[10px] tracking-wider uppercase px-2.5 py-1 rounded">Fairs &amp; Live Demos</span>
+              </div>
+              <div class="p-6">
+                <h3 class="font-display font-bold text-lg text-charcoal-900 group-hover:text-brand-600 transition flex items-center justify-between">
+                  <span>EIMA &amp; Agritechnica Tour</span>
+                  <i class="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transform translate-x-1 transition"></i>
+                </h3>
+                <p class="mt-2 text-xs text-gray-500 leading-relaxed">Meet our design engineers at Hall 26, Booth B14. Experience live soil demo tests and new gearbox releases.</p>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+
+           <!-- VIDEO CARD -->
+            <div
+              class="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/70 hover:shadow-xl transition-all duration-300"
+            >
+
+              <!-- CLICKABLE VIDEO AREA -->
+              <div
+                onclick="openYouTubeVideo()"
+                class="relative h-56 overflow-hidden bg-black cursor-pointer"
+              >
+
+                <img
+                  src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop"
+                  alt="Field testing video thumbnail"
+                  class="w-full h-full object-cover opacity-85 group-hover:scale-105 transition duration-500"
+                >
+
+                <!-- Overlay -->
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition"></div>
+
+                <!-- PLAY BUTTON -->
+                <div class="absolute inset-0 flex items-center justify-center">
+
+                  <button
+                    type="button"
+                    onclick="openYouTubeVideo(event)"
+                    class="w-16 h-16 rounded-full bg-brand-600/90 text-white flex items-center justify-center text-2xl shadow-xl hover:bg-brand-500 hover:scale-110 transition duration-300 cursor-pointer"
+                    aria-label="Play video"
+                  >
+                    <i class="fa-solid fa-play ml-1"></i>
+                  </button>
+
+                </div>
+
+                <!-- WATCH VIDEO -->
+                <button
+                  type="button"
+                  onclick="openYouTubeVideo(event)"
+                  class="absolute bottom-3 right-3 bg-black/75 hover:bg-brand-600 text-white text-[11px] font-mono px-3 py-1.5 rounded cursor-pointer transition"
+                >
+                  WATCH VIDEO
+                </button>
+
+              </div>
+
+
+              <!-- CONTENT -->
+              <div class="p-6">
+
+                <h3
+                  class="font-display font-bold text-lg text-charcoal-900 group-hover:text-brand-600 transition flex items-center justify-between"
+                >
+                  <span>Field In-Action Demonstrations</span>
+
+                  <i
+                    class="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transform translate-x-1 transition"
+                  ></i>
+                </h3>
+
+                <p class="mt-2 text-xs text-gray-500 leading-relaxed">
+                  Watch high-speed stony soil test runs and mulching efficiency in dense 5cm pruning waste.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <script>
+
+            function openYouTubeVideo(event) {
+
+              /* Prevent card/parent click */
+              if (event) {
+                event.stopPropagation();
+              }
+
+              /* Open YouTube in a new browser tab */
+              window.open(
+                "https://youtu.be/FNbCpMBIkPk",
+                "_blank"
+              );
+
+            }
+
+            </script>
+         
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED MACHINERY SHOWCASE (Matching reference category concept) -->
+      <section class="py-20 bg-gray-50/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+              <span class="text-brand-600 text-xs font-bold tracking-widest uppercase">Precision Machinery Portfolio</span>
+              <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-charcoal-900 mt-2">
+                Certified Soil &amp; Green Equipment
+              </h2>
+            </div>
+            <div class="mt-4 md:mt-0">
+              <button onclick="navigateTo('products')" class="inline-flex items-center text-sm font-semibold text-brand-700 hover:text-brand-800 transition">
+                <span>View complete implement catalogue</span>
+                <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            
+            <!-- Left: Hero Imagery composition of farm machinery in action -->
+            <div class="lg:col-span-5 relative rounded-2xl overflow-hidden min-h-[420px] shadow-lg group">
+              <img src="https://ryetec.co.uk/img/db/product/PERUZZO_ELK_kalapacskeses_kasza_600.jpg?q=80&w=1000&auto=format&fit=crop" alt="Tractor driving through vineyard rows" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-green-950 via-green-950/40 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 p-8 text-white">
+                <span class="bg-brand-500/90 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">Vineyard &amp; Orchard Spec</span>
+                <h3 class="font-display text-2xl font-bold mt-2 leading-snug">Heavy duty flail mowers built with Italian cast iron gearboxes</h3>
+                <p class="text-xs text-gray-300 mt-2">Engineered to shred vines, twigs, and dense grass with minimal tractor fuel consumption.</p>
+                <button onclick="showProductDetails('efgc')" class="mt-4 px-4 py-2 bg-white text-charcoal-900 hover:bg-brand-50 font-semibold text-xs rounded transition">
+                  Inspect EFGC Specs &rarr;
+                </button>
+              </div>
+            </div>
+
+            <!-- Right: Elegant reference-styled Product Cards Grid -->
+            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+              
+              <!-- Product Card 1: SPN -->
+              <div onclick="showProductDetails('spn')" class="bg-white border border-gray-200/90 rounded-2xl p-5 hover:shadow-xl transition-all duration-200 flex flex-col justify-between group cursor-pointer">
+                <div>
+                  <div class="h-44 bg-gray-50 rounded-xl flex items-center justify-center p-4 relative overflow-hidden">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQfEdSna4q0zp0d5bWNspfy6bYz3F4iWtscRZKrhXJ4ZmL3np1vU97NQY&s=10?q=80&w=600&auto=format&fit=crop" alt="SPN Snow blade implement" class="max-h-full max-w-full object-contain mix-blend-multiply group-hover:scale-105 transition">
+                    <span class="absolute top-2 right-2 text-[10px] bg-sky-50 text-sky-700 font-bold px-2 py-0.5 rounded border border-sky-200">Hydraulic</span>
+                  </div>
+                  <h4 class="font-display font-bold text-lg text-charcoal-900 mt-4 group-hover:text-brand-600 transition">SPN Heavy Snow Plow</h4>
+                  <p class="text-xs text-gray-500 mt-1 line-clamp-2">Quick-mount spring-loaded safety trip edge blade with double hydraulic cylinders for municipal and estate clearance.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
+                  <span class="font-semibold text-gray-700">Tractor: 35 – 90 HP</span>
+                  <span class="text-brand-600 font-bold group-hover:translate-x-1 transition">Tech Sheet &rarr;</span>
+                </div>
+              </div>
+
+              <!-- Product Card 2: ECO 16H -->
+              <div onclick="showProductDetails('eco16h')" class="bg-white border border-gray-200/90 rounded-2xl p-5 hover:shadow-xl transition-all duration-200 flex flex-col justify-between group cursor-pointer">
+                <div>
+                  <div class="h-44 bg-gray-50 rounded-xl flex items-center justify-center p-4 relative overflow-hidden">
+                    <img src="https://img.agriexpo.online/images_ag/photo-g/168458-17908838.jpg?q=80&w=600&auto=format&fit=crop" alt="ECO 16H Wood chipper" class="max-h-full max-w-full object-contain mix-blend-multiply group-hover:scale-105 transition">
+                    <span class="absolute top-2 right-2 text-[10px] bg-emerald-50 text-emerald-800 font-bold px-2 py-0.5 rounded border border-emerald-200">Autonomous</span>
+                  </div>
+                  <h4 class="font-display font-bold text-lg text-charcoal-900 mt-4 group-hover:text-brand-600 transition">ECO 16H Autonomous Chipper</h4>
+                  <p class="text-xs text-gray-500 mt-1 line-clamp-2">Direct PTO disc wood chipper with independent self-contained hydraulic feeder rollers, 360-degree discharge chute.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
+                  <span class="font-semibold text-gray-700">Capacity: Max 160 mm</span>
+                  <span class="text-brand-600 font-bold group-hover:translate-x-1 transition">Tech Sheet &rarr;</span>
+                </div>
+              </div>
+
+              <!-- Product Card 3: EFGC -->
+              <div onclick="showProductDetails('efgc')" class="bg-white border border-gray-200/90 rounded-2xl p-5 hover:shadow-xl transition-all duration-200 flex flex-col justify-between group cursor-pointer">
+                <div>
+                  <div class="h-44 bg-gray-50 rounded-xl flex items-center justify-center p-4 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1530267981375-f0de937f5f13?q=80&w=600&auto=format&fit=crop" alt="EFGC Fixed Shredder" class="max-h-full max-w-full object-contain mix-blend-multiply group-hover:scale-105 transition">
+                    <span class="absolute top-2 right-2 text-[10px] bg-brand-50 text-brand-700 font-bold px-2 py-0.5 rounded border border-brand-200">Best Seller</span>
+                  </div>
+                  <h4 class="font-display font-bold text-lg text-charcoal-900 mt-4 group-hover:text-brand-600 transition">EFGC Fixed Shredder Mower</h4>
+                  <p class="text-xs text-gray-500 mt-1 line-clamp-2">Reinforced 4mm chassis with electronic dynamic rotor balance and forged hammer blades for branches up to 4cm.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
+                  <span class="font-semibold text-gray-700">Working width: 105 - 175 cm</span>
+                  <span class="text-brand-600 font-bold group-hover:translate-x-1 transition">Tech Sheet &rarr;</span>
+                </div>
+              </div>
+
+              <!-- Product Card 4: TL Rotary Tiller -->
+              <div onclick="showProductDetails('tl-tiller')" class="bg-white border border-gray-200/90 rounded-2xl p-5 hover:shadow-xl transition-all duration-200 flex flex-col justify-between group cursor-pointer">
+                <div>
+                  <div class="h-44 bg-gray-50 rounded-xl flex items-center justify-center p-4 relative overflow-hidden">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcPl0N1idHijsF5HMCxUK1bZqbc55JUSVCF-BQTTV45-xleAd-GbTY6h1P&s=10?q=80&w=600&auto=format&fit=crop" alt="TL Rotary Tiller" class="max-h-full max-w-full object-contain mix-blend-multiply group-hover:scale-105 transition">
+                    <span class="absolute top-2 right-2 text-[10px] bg-amber-50 text-amber-800 font-bold px-2 py-0.5 rounded border border-amber-200">Side Shift</span>
+                  </div>
+                  <h4 class="font-display font-bold text-lg text-charcoal-900 mt-4 group-hover:text-brand-600 transition">TL Series Side-Shift Tiller</h4>
+                  <p class="text-xs text-gray-500 mt-1 line-clamp-2">Heavy side gear drive in oil bath, 6 curved boron steel blades per flange, skids for adjustable working depth.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
+                  <span class="font-semibold text-gray-700">Tractor: 20 – 50 HP</span>
+                  <span class="text-brand-600 font-bold group-hover:translate-x-1 transition">Tech Sheet &rarr;</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- PANORAMIC PLANT & HEADQUARTERS SECTION -->
+      <section class="relative bg-green-900 text-white overflow-hidden py-24">
+        <div class="absolute inset-0 opacity-60 mix-blend-luminosity">
+          <img src="https://cdn.shopify.com/s/files/1/0582/1418/7192/files/Automation_LED_Technology_and_Sustainability2.jpg?v=1754876722?q=80&w=2000&auto=format&fit=crop" alt="Agroverde High Tech European Manufacturing Facility" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-950 via-green-950/90 to-green-950/70"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl">
+            <span class="text-brand-accent text-xs font-bold tracking-widest uppercase" style="
+    color: #7af22d;">State-of-the-art Production Plant</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold mt-3">
+              Automated Robotic Welding &amp; Precision Balancers in Italy
+            </h2>
+            <p class="mt-5 text-gray-300 text-sm sm:text-base leading-relaxed">
+              Founded with the goal of bringing industrial durability to competitive agricultural contractors. Every implement is engineered with certified boron steels, laser cut components, and electro-powder coated finishes resisting salt, gravel and extreme weather conditions.
+            </p>
+          </div>
+
+          <!-- 4 CIRCULAR STATS (Inspired by the 9000+, 90%, 10%, 300+ stats in reference image) -->
+          <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+            
+            <div class="bg-brand-800/40 border border-brand-500/30 rounded-2xl p-6 text-center backdrop-blur-md transform hover:-translate-y-1 transition duration-300">
+              <div class="w-24 h-24 mx-auto rounded-full border-4 border-emerald-400 flex items-center justify-center bg-brand-900/80 shadow-lg shadow-emerald-500/10">
+                <span class="font-display text-2xl font-black text-white">9,500+</span>
+              </div>
+              <h4 class="font-display font-bold text-sm text-white mt-4 uppercase tracking-wide">Machines Produced</h4>
+              <p class="text-xs text-emerald-200/80 mt-1">Per calendar year in our Italian facilities</p>
+            </div>
+
+            <div class="bg-brand-800/40 border border-brand-500/30 rounded-2xl p-6 text-center backdrop-blur-md transform hover:-translate-y-1 transition duration-300">
+              <div class="w-24 h-24 mx-auto rounded-full border-4 border-emerald-400 flex items-center justify-center bg-brand-900/80 shadow-lg shadow-emerald-500/10">
+                <span class="font-display text-2xl font-black text-white">92%</span>
+              </div>
+              <h4 class="font-display font-bold text-sm text-white mt-4 uppercase tracking-wide">International Market</h4>
+              <p class="text-xs text-emerald-200/80 mt-1">Exported across 36 countries globally</p>
+            </div>
+
+            <div class="bg-brand-800/40 border border-brand-500/30 rounded-2xl p-6 text-center backdrop-blur-md transform hover:-translate-y-1 transition duration-300">
+              <div class="w-24 h-24 mx-auto rounded-full border-4 border-emerald-400 flex items-center justify-center bg-brand-900/80 shadow-lg shadow-emerald-500/10">
+                <span class="font-display text-2xl font-black text-white">8%</span>
+              </div>
+              <h4 class="font-display font-bold text-sm text-white mt-4 uppercase tracking-wide">Domestic Network</h4>
+              <p class="text-xs text-emerald-200/80 mt-1">Italian high-precision vineyard sector</p>
+            </div>
+
+            <div class="bg-brand-800/40 border border-brand-500/30 rounded-2xl p-6 text-center backdrop-blur-md transform hover:-translate-y-1 transition duration-300">
+              <div class="w-24 h-24 mx-auto rounded-full border-4 border-emerald-400 flex items-center justify-center bg-brand-900/80 shadow-lg shadow-emerald-500/10">
+                <span class="font-display text-2xl font-black text-white">320+</span>
+              </div>
+              <h4 class="font-display font-bold text-sm text-white mt-4 uppercase tracking-wide">Authorized Dealers</h4>
+              <p class="text-xs text-emerald-200/80 mt-1">Direct technical partners across Europe</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- GREEN & SOIL SPECIALISTS: EDITORIAL EXCELLENCE SECTION -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-5">
+              <span class="text-brand-600 font-bold text-xs uppercase tracking-wider">European Manufacturing Integrity</span>
+              <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-charcoal-900 mt-2 leading-tight">
+                Green and Soil Specialists for Tough Terrains
+              </h2>
+              <div class="w-16 h-1 bg-brand-600 my-6"></div>
+              <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                Agroverde is a premier European engineering firm specializing in professional implements for agricultural maintenance, vineyard floor control, and municipal snow management.
+              </p>
+              <p class="text-sm text-gray-600 leading-relaxed mb-6">
+                Our machinery catalogue encompasses heavy fixed &amp; hydraulic verge flail mowers, heavy rotary tillers, stone buriers, PTO wood chippers, and tow-behind implements for ATV/UTVs. All models feature CE standard safety homologations.
+              </p>
+              <div class="flex items-center gap-4">
+                <button onclick="navigateTo('about')" class="px-5 py-2.5 bg-charcoal-900 hover:bg-brand-700 text-white text-xs font-semibold uppercase tracking-wider rounded-lg transition">
+                  About Agroverde Company
+                </button>
+                <button onclick="navigateTo('catalogs')" class="px-5 py-2.5 border border-gray-300 hover:border-brand-600 text-charcoal-900 text-xs font-semibold uppercase tracking-wider rounded-lg transition">
+                  Download 2025 Catalog
+                </button>
+              </div>
+            </div>
+
+            <!-- Two complementary field images -->
+            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                <img src="https://cdn.wikifarmer.com/images/detailed/2024/10/Vineyard-Management-Using-Advanced-Precision-Viticulture-Techniques.jpg?q=80&w=800&auto=format&fit=crop" alt="Vineyard mowing" class="w-full h-72 object-cover hover:scale-105 transition duration-500">
+                <div class="p-5 bg-white">
+                  <h4 class="font-display font-bold text-sm text-charcoal-900">Vineyard Ground Optimization</h4>
+                  <p class="text-xs text-gray-500 mt-1">Inter-row shredding preserving organic soil matter and nitrogen levels.</p>
+                </div>
+              </div>
+              <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100 sm:translate-y-8">
+                <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?q=80&w=800&auto=format&fit=crop" alt="Machinery chassis inspection" class="w-full h-72 object-cover hover:scale-105 transition duration-500">
+                <div class="p-5 bg-white">
+                  <h4 class="font-display font-bold text-sm text-charcoal-900">Hardened Rotor Components</h4>
+                  <p class="text-xs text-gray-500 mt-1">Dynamic balancing at 2,400 RPM to eliminate chassis stress and vibrations.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- HOMEPAGE CONTACT & INTEGRATED COMPACT MAP -->
+      <section class="py-16 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-xs font-bold text-brand-600 uppercase tracking-widest">Connect with Agroverde Headquarters</span>
+            <h2 class="font-display text-3xl font-extrabold text-charcoal-900 mt-1">Factory Inquiries &amp; Dealer Inquiries</h2>
+            <p class="text-xs sm:text-sm text-gray-500 mt-2">Have a question regarding PTO shaft dimensions, distributor dealerships, or urgent spare parts shipment?</p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-gray-200/80">
+            
+            <!-- Left Info + Compact Google Map -->
+            <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
+              <div>
+                <h3 class="font-display text-xl font-bold text-charcoal-900 mb-4">Direct Contact Points</h3>
+                
+                <div class="space-y-4 text-xs">
+                  <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                      <p class="font-bold text-gray-800">Operational Production Plant:</p>
+                      <p class="text-gray-500">Via Industriale 42, 14055 Costigliole d'Asti (AT), Piedmont, Italy</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                      <p class="font-bold text-gray-800">Phone Support:</p>
+                      <p class="text-gray-500">+39 0141 876 220 &middot; Mon-Fri 08:00 - 18:30 CET</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                      <p class="font-bold text-gray-800">Export Sales &amp; Technical Support:</p>
+                      <p class="text-gray-500">commerciale@agroverde-machinery.eu</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Compact Integrated Google Map (As requested: not big, adjusted in same section) -->
+              <div class="rounded-xl overflow-hidden border border-gray-200 shadow-inner h-52 w-full relative">
+                <iframe 
+                  title="Agroverde Factory Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d181044.59013083042!2d8.15049514603099!3d44.82142200234057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4787a71ca9d2551d%3A0x2a11fa3571d43a65!2sAsti%2C%20Province%20of%20Asti%2C%20Italy!5e0!3m2!1sen!2sit!4v1700000000000!5m2!1sen!2sit" 
+                  class="w-full h-full border-0" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <div class="absolute top-2 left-2 bg-white/95 px-2.5 py-1 rounded shadow text-[10px] font-bold text-charcoal-900">
+                  <i class="fa-solid fa-industry text-brand-600 mr-1"></i> Agroverde Central Plant
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Right Form -->
+            <div class="lg:col-span-7 bg-gray-50/70 p-6 sm:p-8 rounded-2xl border border-gray-100">
+              <h3 class="font-display text-lg font-bold text-charcoal-900 mb-1">Send a Direct Operational Message</h3>
+              <p class="text-xs text-gray-500 mb-6">Receive guaranteed technical documentation and pricing from our multilingual team.</p>
+              
+              <form id="homeContactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Full Name *</label>
+                    <input required type="text" placeholder="e.g. Marco Rossi" class="w-full bg-white border border-gray-300 rounded-lg px-3.5 py-2.5 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Email Address *</label>
+                    <input required type="email" placeholder="name@farmcompany.com" class="w-full bg-white border border-gray-300 rounded-lg px-3.5 py-2.5 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Subject</label>
+                    <select class="w-full bg-white border border-gray-300 rounded-lg px-3.5 py-2.5 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
+                      <option>Machine Pricing &amp; Lead Times</option>
+                      <option>Become an Authorized Dealer</option>
+                      <option>OEM Custom Modifications</option>
+                      <option>Urgent Spare Parts / Gearbox</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Country</label>
+                    <input type="text" placeholder="e.g. France / Germany" class="w-full bg-white border border-gray-300 rounded-lg px-3.5 py-2.5 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-gray-700 mb-1">Message / Implement Inquiries *</label>
+                  <textarea rows="4" required placeholder="Describe your tractor model, desired implement width, or dealer application..." class="w-full bg-white border border-gray-300 rounded-lg p-3 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none"></textarea>
+                </div>
+
+                <div class="flex items-center justify-between pt-2">
+                  <div class="flex items-center gap-2">
+                    <input type="checkbox" required id="homeConsent" class="rounded text-brand-600 text-xs">
+                    <label for="homeConsent" class="text-[11px] text-gray-500">I agree to the GDPR Privacy Terms.</label>
+                  </div>
+                  <button type="submit" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold text-xs uppercase tracking-wider px-6 py-3 rounded-lg shadow-md transition active:scale-95">
+                    Send Inquiry
+                  </button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- VIEW: 2. ALL PRODUCTS PAGE (Following reference category concept) -->
+    <!-- ======================================================== -->
+    <div id="view-products" class="page-view">
+      
+      <!-- HERO SECTION WITH SUITABLE MACHINERY IMAGE -->
+      <div class="relative bg-charcoal-10 text-white py-16 sm:py-24 overflow-hidden">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Agricultural_machinery.jpg/1280px-Agricultural_machinery.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail?q=80&w=2000&auto=format&fit=crop" alt="Machinery catalog hero background" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-luminosity">
+        <div class="absolute inset-0 bg-gradient-to-t from-green-950 via-green-900/80 to-transparent"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Breadcrumb -->
+          <nav class="flex items-center text-xs text-gray-400 mb-4 space-x-2">
+            <a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:text-white">Home</a>
+            <span>/</span>
+            <span class="text-emerald-400 font-semibold">Agricultural Implements Catalogue</span>
+          </nav>
+          <h1 class="font-display text-3xl sm:text-5xl font-extrabold uppercase tracking-tight text-white">
+            Machinery &amp; Implements Range
+          </h1>
+          <p class="mt-4 text-sm sm:text-base text-gray-300 max-w-2xl font-light">
+            Explore our certified range of ground preparation tools, flail mulchers, hydraulic snow blades, and chippers designed for tractors from 15 to 130 HP.
+          </p>
+        </div>
+      </div>
+
+      <!-- SEARCH & FILTER TOOLBAR -->
+      <section class="border-b border-gray-200 bg-white sticky top-20 z-20 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            
+            <!-- Category filter pill buttons -->
+            <div class="flex flex-wrap items-center gap-2" id="productFilterButtons">
+              <button onclick="filterCatalog('all', this)" class="prod-filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-brand-700 text-white transition">All Categories (12)</button>
+              <button onclick="filterCatalog('mowers', this)" class="prod-filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 transition">Flail Mowers</button>
+              <button onclick="filterCatalog('rotary', this)" class="prod-filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 transition">Tillers &amp; Harrows</button>
+              <button onclick="filterCatalog('woodchipper', this)" class="prod-filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 transition">Wood Chippers</button>
+              <button onclick="filterCatalog('winter', this)" class="prod-filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 transition">Snow Clearing</button>
+            </div>
+
+            <!-- Live in-catalog search -->
+            <div class="relative w-full md:w-72">
+              <input type="text" id="catalogSearchInput" onkeyup="filterByInput()" placeholder="Filter by model, width, or HP..." class="w-full bg-gray-50 border border-gray-300 rounded-lg pl-9 pr-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-brand-600">
+              <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-gray-400 text-xs"></i>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- TWO-COLUMN ELEGANT CATEGORY CARDS (Direct homage to screenshot reference concept) -->
+      <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="productsGrid">
+            
+            <!-- Category Card 1: SPN SNOW PLOW -->
+            <div class="prod-item winter bg-white rounded-2xl border border-gray-200/80 p-6 flex flex-col sm:flex-row gap-6 hover:shadow-xl transition-all duration-300 group">
+              <div class="sm:w-1/2 bg-gray-50 rounded-xl p-4 flex items-center justify-center relative overflow-hidden">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQfEdSna4q0zp0d5bWNspfy6bYz3F4iWtscRZKrhXJ4ZmL3np1vU97NQY&s=10?q=80&w=600&auto=format&fit=crop" alt="SPN Snow Blade" class="max-h-48 object-contain mix-blend-multiply group-hover:scale-105 transition duration-300">
+                <span class="absolute top-2 left-2 bg-charcoal-900 text-white text-[10px] font-bold px-2 py-0.5 rounded">SPN SERIES</span>
+              </div>
+              <div class="sm:w-1/2 flex flex-col justify-between">
+                <div>
+                  <div class="text-[11px] font-bold uppercase tracking-wider text-brand-600">Winter Municipal Line</div>
+                  <h3 class="font-display font-bold text-xl text-charcoal-900 mt-1">SPN Hydraulic Snow Plow</h3>
+                  <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                    Heavy-duty angled snow blade featuring safety polyurethane trip edge and dual double-acting hydraulic orientation cylinders.
+                  </p>
+                  <div class="mt-4 space-y-1 text-xs text-gray-600">
+                    <div><i class="fa-solid fa-check text-brand-600 mr-1.5"></i> Working width: 130 to 200 cm</div>
+                    <div><i class="fa-solid fa-check text-brand-600 mr-1.5"></i> Reversible wear scraper blade</div>
+                    <div><i class="fa-solid fa-check text-brand-600 mr-1.5"></i> Compatible: Cat. I &amp; II linkage</div>
+                  </div>
+                </div>
+                <div class="mt-6 flex items-center gap-3">
+                  <button onclick="showProductDetails('spn')" class="flex-1 bg-brand-700 hover:bg-brand-800 text-white text-xs font-semibold py-2.5 rounded-lg text-center transition">
+                    View Specifications
+                  </button>
+                  <button onclick="quickQuoteFor('SPN Snow Plow')" class="px-3 py-2.5 border border-gray-300 hover:border-brand-600 text-gray-700 text-xs rounded-lg transition" title="Get Quick Quote">
+                    <i class="fa-solid fa-file-invoice"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category Card 2: ECO 16H CHIPPER -->
+            <div class="prod-item woodchipper bg-white rounded-2xl border border-gray-200/80 p-6 flex flex-col sm:flex-row gap-6 hover:shadow-xl transition-all duration-300 group">
+              <div class="sm:w-1/2 bg-gray-50 rounded-xl p-4 flex items-center justify-center relative overflow-hidden">
+                <img src="https://img.agriexpo.online/images_ag/photo-g/168458-17908838.jpg?q=80&w=600&auto=format&fit=crop" alt="ECO 16H Wood Chipper" class="max-h-48 object-contain mix-blend-multiply group-hover:scale-105 transition duration-300">
+                <span class="absolute top-2 left-2 bg-charcoal-900 text-white text-[10px] font-bold px-2 py-0.5 rounded">ECO-16H</span>
+              </div>
+              <div class="sm:w-1/2 flex flex-col justify-between">
+                <div>
+                  <div class="text-[11px] font-bold uppercase tracking-wider text-brand-600">Forestry &amp; Prunings</div>
+                  <h3 class="font-display font-bold text-xl text-charcoal-900 mt-1">ECO 16H Hydraulic Chipper</h3>
+                  <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                    PTO driven disc shredder equipped with internal hydraulic pump &amp; twin feed rollers. No external hydraulic connections required.
+                  </p>
+                  <div class="mt-4 space-y-1 text-xs text-gray-600">
+                    <div><i class="fa-solid fa-check text-brand-600 mr-1.5"></i> Max branch diameter: 160 mm</div>
+                    <div><i class="fa-solid fa-check text-brand-600 mr-1.5"></i> Variable forward &amp; reverse speed</div>
+                    <div><i class="fa-solid fa-check text-brand-600 mr-1.5"></i> 360° directional ejection tube</div>
+                  </div>
+                </div>
+                <div class="mt-6 flex items-center gap-3">
+                  <button onclick="showProductDetails('eco16h')" class="flex-1 bg-brand-700 hover:bg-brand-800 text-white text-xs font-semibold py-2.5 rounded-lg text-center transition">
+                    View Specifications
+                  </button>
+                  <button onclick="quickQuoteFor('ECO-16H Wood Chipper')" class="px-3 py-2.5 border border-gray-300 hover:border-brand-600 text-gray-700 text-xs rounded-lg transition" title="Get Quick Quote">
+                    <i class="fa-solid fa-file-invoice"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category Card 3: EFGC FIXED SHREDDER -->
+            <div class="prod-item mowers bg-white rounded-2xl border border-gray-200/80 p-6 flex flex-col sm:flex-row gap-6 hover:shadow-xl transition-all duration-300 group">
+              <div class="sm:w-1/2 bg-gray-50 rounded-xl p-4 flex items-center justify-center relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1530267981375-f0de937f5f13?q=80&w=600&auto=format&fit=crop" alt="EFGC Fixed Shredder" class="max-h-48 object-contain mix-blend-multiply group-hover:scale-105 transition duration-300">
+                <span class="absolute top-2 left-2 bg-charcoal-900 text-white text-[10px] font-bold px-2 py-0.5 rounded">EFGC SERIES</span>
+              </div>
+              <div class="sm:w-1/2 flex flex-col justify-between">
+                <div>
+                  <div class="text-[11px] font-bold uppercase tracking-wider text-brand-600">Grassland &amp; Pruning Shredders</div>
+                  <h3 class="font-display font-bold text-xl text-charcoal-900 mt-1">EFGC Fixed Shredder Mower</h3>
+                  <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                    Universal flail mower for orchards, vineyards and open grass. Cast iron gearbox with built-in free-wheel mechanism.
+                  </p>
+                  <div class="mt-4 space-y-1 text-xs text-gray-600">
+                    <div><i class="fa-solid fa-check text-brand-600 mr-1.5"></i> Widths: 105, 125, 145, 165, 175 cm</div>
+                    <div><i class="fa-solid fa-check text-brand-600 mr-1.5"></i> 800g forged hammers or Y-blades</div>
+                    <div><i class="fa-solid fa-check text-brand-600 mr-1.5"></i> Adjustable rear scraper roller</div>
+                  </div>
+                </div>
+                <div class="mt-6 flex items-center gap-3">
+                  <button onclick="showProductDetails('efgc')" class="flex-1 bg-brand-700 hover:bg-brand-800 text-white text-xs font-semibold py-2.5 rounded-lg text-center transition">
+                    View Specifications
+                  </button>
+                  <button onclick="quickQuoteFor('EFGC Fixed Shredder')" class="px-3 py-2.5 border border-gray-300 hover:border-brand-600 text-gray-700 text-xs rounded-lg transition" title="Get Quick Quote">
+                    <i class="fa-solid fa-file-invoice"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category Card 4: TL ROTARY TILLER -->
+            <div class="prod-item rotary bg-white rounded-2xl border border-gray-200/80 p-6 flex flex-col sm:flex-row gap-6 hover:shadow-xl transition-all duration-300 group">
+              <div class="sm:w-1/2 bg-gray-50 rounded-xl p-4 flex items-center justify-center relative overflow-hidden">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcPl0N1idHijsF5HMCxUK1bZqbc55JUSVCF-BQTTV45-xleAd-GbTY6h1P&s=10?q=80&w=600&auto=format&fit=crop" alt="TL Rotary Tiller" class="max-h-48 object-contain mix-blend-multiply group-hover:scale-105 transition duration-300">
+                <span class="absolute top-2 left-2 bg-charcoal-900 text-white text-[10px] font-bold px-2 py-0.5 rounded">TL SERIES</span>
+              </div>
+              <div class="sm:w-1/2 flex flex-col justify-between">
+                <div>
+                  <div class="text-[11px] font-bold uppercase tracking-wider text-brand-600">Soil Preparation &amp; Seedbeds</div>
+                  <h3 class="font-display font-bold text-xl text-charcoal-900 mt-1">TL Medium Rotary Tiller</h3>
+                  <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                    Equipped with mechanical or manual side shift for working close to vines and tree trunks without damaging roots.
+                  </p>
+                  <div class="mt-4 space-y-1 text-xs text-gray-600">
+                    <div><i class="fa-solid fa-check text-brand-600 mr-1.5"></i> Oil-bath lateral gear drive</div>
+                    <div><i class="fa-solid fa-check text-brand-600 mr-1.5"></i> 6 curved blades per rotor flange</div>
+                    <div><i class="fa-solid fa-check text-brand-600 mr-1.5"></i> Tractor power: 25 to 55 HP</div>
+                  </div>
+                </div>
+                <div class="mt-6 flex items-center gap-3">
+                  <button onclick="showProductDetails('tl-tiller')" class="flex-1 bg-brand-700 hover:bg-brand-800 text-white text-xs font-semibold py-2.5 rounded-lg text-center transition">
+                    View Specifications
+                  </button>
+                  <button onclick="quickQuoteFor('TL Rotary Tiller')" class="px-3 py-2.5 border border-gray-300 hover:border-brand-600 text-gray-700 text-xs rounded-lg transition" title="Get Quick Quote">
+                    <i class="fa-solid fa-file-invoice"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- VIEW: 3. INDIVIDUAL PRODUCT DETAIL PAGE (Interactive) -->
+    <!-- ======================================================== -->
+    <div id="view-product-detail" class="page-view">
+      
+      <!-- HERO -->
+      <div class="relative bg-charcoal-950 text-white py-14 overflow-hidden">
+        <img id="detailHeroBg" src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=2000&auto=format&fit=crop" alt="Machinery action background" class="absolute inset-0 w-full h-full object-cover opacity-25">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav class="flex items-center text-xs text-gray-400 mb-3 space-x-2">
+            <a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:text-white">Home</a>
+            <span>/</span>
+            <a href="javascript:void(0)" onclick="navigateTo('products')" class="hover:text-white">Products</a>
+            <span>/</span>
+            <span id="detailBreadcrumb" class="text-emerald-400 font-semibold">EFGC Fixed Shredder Mower</span>
+          </nav>
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <span id="detailBadge" class="bg-brand-600 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded">Agricultural Line</span>
+              <h1 id="detailTitle" class="font-display text-3xl sm:text-4xl font-extrabold uppercase mt-2">EFGC Heavy Fixed Flail Mower</h1>
+              <p id="detailSubtitle" class="text-xs sm:text-sm text-gray-300 mt-1">Multi-purpose heavy-duty tractor implement for vegetation up to 45 mm diameter</p>
+            </div>
+            <div>
+              <button onclick="openQuoteModal()" class="px-6 py-3 bg-brand-600 hover:bg-brand-500 text-white rounded-lg text-xs font-bold uppercase tracking-wider transition">
+                Request Dealer Price List &rarr;
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT CONTENT BODY -->
+      <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            
+            <!-- Left: Gallery & Main Image -->
+            <div class="lg:col-span-7">
+              <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8 flex items-center justify-center min-h-[380px] overflow-hidden">
+                <img id="detailMainImg" src="https://images.unsplash.com/photo-1530267981375-f0de937f5f13?q=80&w=800&auto=format&fit=crop" alt="Detailed implement view" class="max-h-80 object-contain mix-blend-multiply transition duration-300">
+              </div>
+              
+              <!-- Thumbnails -->
+              <div class="grid grid-cols-4 gap-3 mt-4">
+                <button onclick="changeDetailImg(this.querySelector('img').src)" class="p-2 border border-brand-600 rounded-lg bg-gray-50">
+                  <img src="https://images.unsplash.com/photo-1530267981375-f0de937f5f13?q=80&w=400&auto=format&fit=crop" class="h-14 w-full object-contain mix-blend-multiply">
+                </button>
+                <button onclick="changeDetailImg(this.querySelector('img').src)" class="p-2 border border-gray-200 hover:border-brand-600 rounded-lg bg-gray-50">
+                  <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?q=80&w=400&auto=format&fit=crop" class="h-14 w-full object-contain mix-blend-multiply">
+                </button>
+                <button onclick="changeDetailImg(this.querySelector('img').src)" class="p-2 border border-gray-200 hover:border-brand-600 rounded-lg bg-gray-50">
+                  <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=400&auto=format&fit=crop" class="h-14 w-full object-contain mix-blend-multiply">
+                </button>
+                <button onclick="changeDetailImg(this.querySelector('img').src)" class="p-2 border border-gray-200 hover:border-brand-600 rounded-lg bg-gray-50">
+                  <img src="https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?q=80&w=400&auto=format&fit=crop" class="h-14 w-full object-contain mix-blend-multiply">
+                </button>
+              </div>
+
+              <!-- Tech Description Tabs -->
+              <div class="mt-10">
+                <div class="flex border-b border-gray-200 text-xs font-bold uppercase tracking-wider">
+                  <button onclick="switchTab('specs', this)" class="py-3 px-4 tab-active border-b-2 border-brand-600">Technical Specifications</button>
+                  <button onclick="switchTab('features', this)" class="py-3 px-4 text-gray-500 hover:text-brand-600">Standard Equipment</button>
+                  <button onclick="switchTab('warranty', this)" class="py-3 px-4 text-gray-500 hover:text-brand-600">Warranty &amp; Homologation</button>
+                </div>
+
+                <div id="tabContent-specs" class="py-5">
+                  <table class="w-full text-left text-xs border border-gray-200 rounded-lg overflow-hidden">
+                    <thead class="bg-gray-100 font-bold text-gray-700">
+                      <tr>
+                        <th class="p-3">Model Code</th>
+                        <th class="p-3">Working Width</th>
+                        <th class="p-3">Tractor Power</th>
+                        <th class="p-3">Hammers</th>
+                        <th class="p-3">Total Weight</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 text-gray-600">
+                      <tr><td class="p-3 font-semibold text-charcoal-900">EFGC 105</td><td class="p-3">105 cm</td><td class="p-3">20 - 30 HP</td><td class="p-3">16 pcs</td><td class="p-3">210 kg</td></tr>
+                      <tr><td class="p-3 font-semibold text-charcoal-900">EFGC 125</td><td class="p-3">125 cm</td><td class="p-3">25 - 40 HP</td><td class="p-3">20 pcs</td><td class="p-3">235 kg</td></tr>
+                      <tr><td class="p-3 font-semibold text-charcoal-900">EFGC 145</td><td class="p-3">145 cm</td><td class="p-3">30 - 50 HP</td><td class="p-3">24 pcs</td><td class="p-3">260 kg</td></tr>
+                      <tr><td class="p-3 font-semibold text-charcoal-900">EFGC 165</td><td class="p-3">165 cm</td><td class="p-3">40 - 65 HP</td><td class="p-3">28 pcs</td><td class="p-3">295 kg</td></tr>
+                      <tr><td class="p-3 font-semibold text-charcoal-900">EFGC 175</td><td class="p-3">175 cm</td><td class="p-3">50 - 75 HP</td><td class="p-3">32 pcs</td><td class="p-3">320 kg</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div id="tabContent-features" class="py-5 hidden text-xs text-gray-600 space-y-3">
+                  <p class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Cast iron 540 RPM gearbox with internal over-running clutch</p>
+                  <p class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> 4 High-resistance toothed drive belts with external adjustment screw</p>
+                  <p class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Adjustable rear leveling roller with scraper blade</p>
+                  <p class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Steel front protection flaps to prevent stone ejection</p>
+                  <p class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Included: CE Certified Category 4 PTO drive shaft</p>
+                </div>
+
+                <div id="tabContent-warranty" class="py-5 hidden text-xs text-gray-600 space-y-3">
+                  <p>All Agroverde frames and robotic welds carry a <strong>36-Month European Structural Guarantee</strong>. The internal bevel transmission components carry an official Comer / Bondioli gearbox conformity certificate.</p>
+                  <p>Compliant with 2006/42/EC Machinery Directive, EN ISO 4254-1 agricultural safety standards.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Quick Quote Card & Immediate Specs Sheet -->
+            <div class="lg:col-span-5 space-y-6">
+              
+              <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+                <h3 class="font-display font-bold text-lg text-charcoal-900">Configure &amp; Request Quote</h3>
+                <p class="text-xs text-gray-500 mt-1">Select your preferred implement width and get formal factory pricing.</p>
+                
+                <div class="mt-4 space-y-3">
+                  <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Select Cutting Width</label>
+                    <select class="w-full bg-white border border-gray-300 rounded-lg p-2 text-xs">
+                      <option>EFGC 145 (145 cm - Most Popular)</option>
+                      <option>EFGC 105 (105 cm Compact)</option>
+                      <option>EFGC 125 (125 cm)</option>
+                      <option>EFGC 165 (165 cm Heavy)</option>
+                      <option>EFGC 175 (175 cm Extra Wide)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Cutting Rotor Blades</label>
+                    <select class="w-full bg-white border border-gray-300 rounded-lg p-2 text-xs">
+                      <option>Forged Heavy Hammer Blades (Wood &amp; Brush)</option>
+                      <option>High-Speed Y-Blades (Pasture &amp; Grass)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Your Delivery Postal Code / Country</label>
+                    <input type="text" placeholder="e.g. 70173 Stuttgart, Germany" class="w-full bg-white border border-gray-300 rounded-lg p-2 text-xs">
+                  </div>
+                  <button onclick="openQuoteModal()" class="w-full bg-brand-700 hover:bg-brand-800 text-white font-bold text-xs uppercase tracking-wider py-3 rounded-lg shadow transition">
+                    Request Pro-Forma Invoice &amp; Delivery Date
+                  </button>
+                </div>
+
+                <div class="mt-5 pt-4 border-t border-gray-200 text-center">
+                  <a href="javascript:void(0)" onclick="downloadMockPDF('EFGC-Technical-Datasheet')" class="inline-flex items-center text-xs font-semibold text-brand-700 hover:underline">
+                    <i class="fa-solid fa-file-pdf mr-1.5 text-red-500"></i> Download Official 4-Page PDF Datasheet (1.8 MB)
+                  </a>
+                </div>
+              </div>
+
+              <!-- Spare Parts Assurance Box -->
+              <div class="bg-brand-900 text-white rounded-2xl p-6">
+                <div class="flex items-center gap-3 mb-2">
+                  <i class="fa-solid fa-boxes-packing text-emerald-400 text-xl"></i>
+                  <h4 class="font-display font-bold text-sm">Guaranteed Spare Parts in Stock</h4>
+                </div>
+                <p class="text-xs text-gray-300 leading-relaxed">
+                  Replacement forged hammers, pulleys, transmission V-belts and PTO bearings dispatched in 24 hours via DHL Express directly to your workshop.
+                </p>
+                <div class="mt-4 flex items-center justify-between text-xs">
+                  <span class="text-emerald-300 font-semibold">&bull; 100% Inter-compatibility</span>
+                  <button onclick="navigateTo('services')" class="text-white underline hover:text-emerald-300">View OEM Spares</button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- VIEW: 4. SERVICES & OEM SPARE PARTS PAGE -->
+    <!-- ======================================================== -->
+    <div id="view-services" class="page-view">
+      
+      <!-- HERO -->
+      <div class="relative bg-charcoal-900 text-white py-16 sm:py-24 overflow-hidden">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKkarf4UjHbFguJlsqdBpKIOG3Cfb5deKC9MCsGLFDBQ5pLqODUubXIsOT&s=10?q=80&w=2000&auto=format&fit=crop" alt="Industrial engineering factory services" class="absolute inset-0 w-full h-full object-cover opacity-85">
+        <div class="absolute inset-0 bg-gradient-to-t from-green-950 via-green-900/80 to-transparent"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav class="flex items-center text-xs text-gray-400 mb-4 space-x-2">
+            <a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:text-white">Home</a>
+            <span>/</span>
+            <span class="text-emerald-400 font-semibold">Services &amp; OEM Solutions</span>
+          </nav>
+          <h1 class="font-display text-3xl sm:text-5xl font-extrabold uppercase text-white">
+            Spare Parts &amp; Engineering Services
+          </h1>
+          <p class="mt-4 text-sm sm:text-base text-gray-300 max-w-2xl font-light">
+            Comprehensive lifecycle support for agricultural fleets: original transmission components, robotic custom fab, and certified warranty repairs.
+          </p>
+        </div>
+      </div>
+
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition">
+              <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center text-xl mb-5">
+                <i class="fa-solid fa-truck-ramp-box"></i>
+              </div>
+              <h3 class="font-display font-bold text-lg text-charcoal-900">48-Hour OEM Parts Delivery</h3>
+              <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                Over 18,000 reference items stored in our automated Asti warehouse: flail hammers, boron rotor knives, PTO shafts, and heavy roller bearings ready for express EU transit.
+              </p>
+              <button onclick="openQuoteModal()" class="mt-6 text-xs font-bold text-brand-600 hover:text-brand-800">
+                Order Spare Parts Catalog &rarr;
+              </button>
+            </div>
+
+            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition">
+              <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center text-xl mb-5">
+                <i class="fa-solid fa-gear"></i>
+              </div>
+              <h3 class="font-display font-bold text-lg text-charcoal-900">Custom OEM Implement Engineering</h3>
+              <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                Design partnerships for tractor importers and local machinery brands. We build custom hitches, specific PTO rotational speeds, and special paint homologations.
+              </p>
+              <button onclick="navigateTo('contact')" class="mt-6 text-xs font-bold text-brand-600 hover:text-brand-800">
+                Inquire OEM Manufacturing &rarr;
+              </button>
+            </div>
+
+            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition">
+              <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center text-xl mb-5">
+                <i class="fa-solid fa-user-gear"></i>
+              </div>
+              <h3 class="font-display font-bold text-lg text-charcoal-900">Technical Field Support &amp; Training</h3>
+              <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                Dedicated telephone hotlines in English, Italian, German, and French for workshop mechanics diagnosing hydraulic pressures and gearbox torque settings.
+              </p>
+              <button onclick="navigateTo('contact')" class="mt-6 text-xs font-bold text-brand-600 hover:text-brand-800">
+                Contact Technical Staff &rarr;
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- VIEW: 5. ABOUT COMPANY PAGE -->
+    <!-- ======================================================== -->
+    <div id="view-about" class="page-view">
+      
+      <!-- HERO -->
+      <div class="relative bg-charcoal-900 text-white py-16 sm:py-24 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop" alt="Italian agricultural fields" class="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-luminosity">
+        <div class="absolute inset-0 bg-gradient-to-t from-green-950 via-green-900/80 to-transparent"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav class="flex items-center text-xs text-gray-400 mb-4 space-x-2">
+            <a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:text-white">Home</a>
+            <span>/</span>
+            <span class="text-emerald-400 font-semibold">About Company</span>
+          </nav>
+          <h1 class="font-display text-3xl sm:text-5xl font-extrabold uppercase text-white">
+            Italian Craftsmanship &middot; European Vision
+          </h1>
+          <p class="mt-4 text-sm sm:text-base text-gray-300 max-w-2xl font-light">
+            Rooted in the agricultural heartland of northern Italy, delivering reliable machinery to professional farmers, forestry contractors, and municipal operators worldwide.
+          </p>
+        </div>
+      </div>
+
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span class="text-brand-600 font-bold text-xs uppercase tracking-widest">Our Story &amp; Values</span>
+              <h2 class="font-display text-3xl font-extrabold text-charcoal-900 mt-2">More than 25 Years of Soil Innovation</h2>
+              <p class="text-xs sm:text-sm text-gray-600 mt-4 leading-relaxed">
+                Agroverde began with a single workshop focused on repairing and reinforcing flail mowers for rough rocky hillside vineyards. Today, our 18,000 m² production facility houses modern laser-cutting centers, robotic welding cells, and automated powder-coating lines.
+              </p>
+              <p class="text-xs sm:text-sm text-gray-600 mt-3 leading-relaxed">
+                By maintaining strict in-house quality control and manufacturing all key structural components within Europe, we ensure every implement delivers decade-long field reliability with minimal downtime.
+              </p>
+              
+              <!-- Quality certifications strip -->
+              <div class="mt-8 grid grid-cols-3 gap-4 border-t border-gray-200 pt-6">
+                <div>
+                  <i class="fa-solid fa-stamp text-brand-600 text-2xl mb-1"></i>
+                  <h4 class="font-bold text-xs text-charcoal-900">ISO 9001:2015</h4>
+                  <p class="text-[11px] text-gray-500">Quality Management</p>
+                </div>
+                <div>
+                  <i class="fa-solid fa-leaf text-brand-600 text-2xl mb-1"></i>
+                  <h4 class="font-bold text-xs text-charcoal-900">ISO 14001</h4>
+                  <p class="text-[11px] text-gray-500">Environmental Standard</p>
+                </div>
+                <div>
+                  <i class="fa-solid fa-shield text-brand-600 text-2xl mb-1"></i>
+                  <h4 class="font-bold text-xs text-charcoal-900">CE Certified</h4>
+                  <p class="text-[11px] text-gray-500">Directive 2006/42/EC</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4dHH2VcqJfV09wB-oFEdcLXFYdVg9vUjYo3Dvqid7pIvyhew8wDkz-p4&s=10?q=80&w=900&auto=format&fit=crop" alt="Agroverde Factory Production Floor" class="rounded-2xl shadow-xl border border-gray-200">
+              <div class="absolute -bottom-6 -left-6 bg-brand-800 text-white p-5 rounded-xl shadow-lg max-w-xs hidden sm:block">
+                <p class="font-display font-bold text-2xl">100%</p>
+                <p class="text-xs text-emerald-200 mt-1">Inspected dynamic balancing for every rotating drum before packing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- VIEW: 6. TECH CATALOGS / RESOURCES PAGE -->
+    <!-- ======================================================== -->
+    <div id="view-catalogs" class="page-view">
+      
+      <!-- HERO -->
+      <div class="relative bg-charcoal-900 text-white py-16 sm:py-24 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2000&auto=format&fit=crop" alt="Catalog documentation hero" class="absolute inset-0 w-full h-full object-cover opacity-65">
+        <div class="absolute inset-0 bg-gradient-to-t from-green-950 via-green-900/0 to-transparent"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav class="flex items-center text-xs text-gray-400 mb-4 space-x-2">
+            <a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:text-white">Home</a>
+            <span>/</span>
+            <span class="text-emerald-400 font-semibold">Technical Documentation</span>
+          </nav>
+          <h1 class="font-display text-3xl sm:text-5xl font-extrabold uppercase text-white">
+            Catalogs &amp; Technical Manuals
+          </h1>
+          <p class="mt-4 text-sm sm:text-base text-gray-300 max-w-2xl font-light">
+            Download our latest complete implement catalogues, exploded spare parts schematics, and hydraulic assembly guides.
+          </p>
+        </div>
+      </div>
+
+      <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Catalog 1 -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition">
+              <div class="h-44 bg-brand-50 rounded-xl flex items-center justify-center text-brand-700 text-5xl mb-4">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+              <span class="text-[10px] bg-brand-100 text-brand-800 font-bold px-2 py-0.5 rounded">2025 MASTER EDITION</span>
+              <h3 class="font-display font-bold text-lg text-charcoal-900 mt-2">Complete Implements Catalogue</h3>
+              <p class="text-xs text-gray-500 mt-1">84 pages of comprehensive specifications, hydraulic diagrams, and implement HP compatibility.</p>
+              <div class="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between">
+                <span class="text-xs text-gray-400">PDF &middot; 14.2 MB</span>
+                <button onclick="downloadMockPDF('Agroverde-Master-Catalog-2025')" class="text-xs font-bold text-brand-700 hover:text-brand-900 flex items-center gap-1.5">
+                  <i class="fa-solid fa-cloud-arrow-down"></i> Download
+                </button>
+              </div>
+            </div>
+
+            <!-- Catalog 2 -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition">
+              <div class="h-44 bg-sky-50 rounded-xl flex items-center justify-center text-sky-700 text-5xl mb-4">
+                <i class="fa-regular fa-snowflake"></i>
+              </div>
+              <span class="text-[10px] bg-sky-100 text-sky-800 font-bold px-2 py-0.5 rounded">MUNICIPAL WINTER</span>
+              <h3 class="font-display font-bold text-lg text-charcoal-900 mt-2">Snow Plows &amp; Salt Spreaders</h3>
+              <p class="text-xs text-gray-500 mt-1">Detailed hydraulic flow requirements, hitch brackets, and polyurethane edge wear sheets.</p>
+              <div class="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between">
+                <span class="text-xs text-gray-400">PDF &middot; 6.8 MB</span>
+                <button onclick="downloadMockPDF('Agroverde-Winter-Line-2025')" class="text-xs font-bold text-brand-700 hover:text-brand-900 flex items-center gap-1.5">
+                  <i class="fa-solid fa-cloud-arrow-down"></i> Download
+                </button>
+              </div>
+            </div>
+
+            <!-- Catalog 3 -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition">
+              <div class="h-44 bg-amber-50 rounded-xl flex items-center justify-center text-amber-700 text-5xl mb-4">
+                <i class="fa-solid fa-gears"></i>
+              </div>
+              <span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">ORIGINAL SPARES</span>
+              <h3 class="font-display font-bold text-lg text-charcoal-900 mt-2">Exploded Parts Schematics</h3>
+              <p class="text-xs text-gray-500 mt-1">Part numbers for Comer gearboxes, flail hammer bolts, rotor shafts, and protective covers.</p>
+              <div class="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between">
+                <span class="text-xs text-gray-400">PDF &middot; 9.4 MB</span>
+                <button onclick="downloadMockPDF('Agroverde-Spare-Parts-Exploded-Views')" class="text-xs font-bold text-brand-700 hover:text-brand-900 flex items-center gap-1.5">
+                  <i class="fa-solid fa-cloud-arrow-down"></i> Download
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- VIEW: 7. NEWS & FIELD FAIRS PAGE -->
+    <!-- ======================================================== -->
+    <div id="view-news" class="page-view">
+      
+      <!-- HERO -->
+      <div class="relative bg-charcoal-900 text-white py-16 sm:py-24 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2000&auto=format&fit=crop" alt="Field exhibition news" class="absolute inset-0 w-full h-full object-cover opacity-65">
+        <div class="absolute inset-0 bg-gradient-to-t from-green-950 via-green-900/80 to-transparent"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav class="flex items-center text-xs text-gray-400 mb-4 space-x-2">
+            <a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:text-white">Home</a>
+            <span>/</span>
+            <span class="text-emerald-400 font-semibold">Field News &amp; Events</span>
+          </nav>
+          <h1 class="font-display text-3xl sm:text-5xl font-extrabold uppercase text-white">
+            Industry Events &amp; Field Trials
+          </h1>
+          <p class="mt-4 text-sm sm:text-base text-gray-300 max-w-2xl font-light">
+            Stay updated on new implement certifications, upcoming international exhibitions, and vineyard demonstrations across Europe.
+          </p>
+        </div>
+      </div>
+
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <article class="bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition">
+              <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=600&auto=format&fit=crop" alt="Fair hall" class="w-full h-48 object-cover">
+              <div class="p-6">
+                <span class="text-[11px] font-bold text-brand-600 uppercase">Upcoming Fair &middot; Bologna</span>
+                <h3 class="font-display font-bold text-lg text-charcoal-900 mt-1">Meet Agroverde at EIMA International 2025</h3>
+                <p class="text-xs text-gray-500 mt-2">Join us at Hall 26, Stand B-14 to preview our new automatic hydraulic side-shift sensors.</p>
+                <div class="mt-4 pt-3 border-t border-gray-200 text-[11px] text-gray-400">November 12-16, 2025</div>
+              </div>
+            </article>
+
+            <article class="bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition">
+              <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=600&auto=format&fit=crop" alt="Field trials" class="w-full h-48 object-cover">
+              <div class="p-6">
+                <span class="text-[11px] font-bold text-brand-600 uppercase">Field Report &middot; Piedmont</span>
+                <h3 class="font-display font-bold text-lg text-charcoal-900 mt-1">Stony Soil Endurance Testing Results</h3>
+                <p class="text-xs text-gray-500 mt-2">Over 400 continuous hours in river stone soils demonstrate 35% higher wear life for our forged hammers.</p>
+                <div class="mt-4 pt-3 border-t border-gray-200 text-[11px] text-gray-400">October 28, 2024</div>
+              </div>
+            </article>
+
+            <article class="bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKkarf4UjHbFguJlsqdBpKIOG3Cfb5deKC9MCsGLFDBQ5pLqODUubXIsOT&s=10?q=80&w=600&auto=format&fit=crop" alt="Robotics" class="w-full h-48 object-cover">
+              <div class="p-6">
+                <span class="text-[11px] font-bold text-brand-600 uppercase">Facility Expansion</span>
+                <h3 class="font-display font-bold text-lg text-charcoal-900 mt-1">New Robotic Laser Cell Operational</h3>
+                <p class="text-xs text-gray-500 mt-2">Our €1.4M manufacturing upgrade cuts lead times for large distributor orders by half.</p>
+                <div class="mt-4 pt-3 border-t border-gray-200 text-[11px] text-gray-400">August 14, 2024</div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- VIEW: 8. CONTACT PAGE -->
+    <!-- ======================================================== -->
+    <div id="view-contact" class="page-view">
+      
+      <!-- HERO -->
+      <div class="relative bg-charcoal-900 text-white py-16 sm:py-24 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop" alt="Headquarters location" class="absolute inset-0 w-full h-full object-cover opacity-65">
+        <div class="absolute inset-0 bg-gradient-to-t from-green-950 via-green-900/80 to-transparent"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav class="flex items-center text-xs text-gray-400 mb-4 space-x-2">
+            <a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:text-white">Home</a>
+            <span>/</span>
+            <span class="text-emerald-400 font-semibold">Headquarters &amp; Dealers</span>
+          </nav>
+          <h1 class="font-display text-3xl sm:text-5xl font-extrabold uppercase text-white">
+            Contact Agroverde Europe
+          </h1>
+          <p class="mt-4 text-sm sm:text-base text-gray-300 max-w-2xl font-light">
+            Our engineers, distributor managers, and technical parts team are available Monday through Friday.
+          </p>
+        </div>
+      </div>
+
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            
+            <div class="lg:col-span-5 space-y-6">
+              <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+                <h3 class="font-display font-bold text-lg text-charcoal-900 mb-4">Direct Contact Points</h3>
+                <div class="space-y-4 text-xs text-gray-600">
+                  <div>
+                    <p class="font-bold text-gray-800">Head Office &amp; Factory:</p>
+                    <p>Via Industriale 42, 14055 Costigliole d'Asti (AT), Italy</p>
+                  </div>
+                  <div>
+                    <p class="font-bold text-gray-800">Direct Telephone:</p>
+                    <p>+39 0141 876 220 (Multilingual sales)</p>
+                  </div>
+                  <div>
+                    <p class="font-bold text-gray-800">Export Sales Email:</p>
+                    <p>export@agroverde-machinery.eu</p>
+                  </div>
+                  <div>
+                    <p class="font-bold text-gray-800">Working Hours:</p>
+                    <p>Monday - Friday: 08:00 - 12:30 / 14:00 - 18:30 CET</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Map -->
+              <div class="rounded-2xl overflow-hidden border border-gray-200 h-64">
+                <iframe 
+                  title="Agroverde Full Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d181044.59013083042!2d8.15049514603099!3d44.82142200234057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4787a71ca9d2551d%3A0x2a11fa3571d43a65!2sAsti%2C%20Province%20of%20Asti%2C%20Italy!5e0!3m2!1sen!2sit!4v1700000000000!5m2!1sen!2sit" 
+                  class="w-full h-full border-0" 
+                  allowfullscreen="" 
+                  loading="lazy">
+                </iframe>
+              </div>
+            </div>
+
+            <div class="lg:col-span-7 bg-gray-50 p-8 rounded-2xl border border-gray-200">
+              <h3 class="font-display font-bold text-xl text-charcoal-900 mb-2">Technical Inquiry Form</h3>
+              <p class="text-xs text-gray-500 mb-6">Fill in the fields below to contact our European engineering sales branch.</p>
+              
+              <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Company / Organization *</label>
+                    <input required type="text" class="w-full bg-white border border-gray-300 rounded-lg p-2.5 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Contact Name *</label>
+                    <input required type="text" class="w-full bg-white border border-gray-300 rounded-lg p-2.5 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Email Address *</label>
+                    <input required type="email" class="w-full bg-white border border-gray-300 rounded-lg p-2.5 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Phone Number</label>
+                    <input type="tel" class="w-full bg-white border border-gray-300 rounded-lg p-2.5 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-gray-700 mb-1">Nature of Inquiry</label>
+                  <select class="w-full bg-white border border-gray-300 rounded-lg p-2.5 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none">
+                    <option>Machinery Price Quotation &amp; Logistics</option>
+                    <option>Dealership Application in Europe</option>
+                    <option>Spare Parts &amp; Transmission Support</option>
+                    <option>Custom OEM Implements for Tractor Manufacturers</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-gray-700 mb-1">Detailed Message *</label>
+                  <textarea rows="5" required class="w-full bg-white border border-gray-300 rounded-lg p-3 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none" placeholder="Provide information regarding implements, working widths, or quantity needed..."></textarea>
+                </div>
+
+                <button type="submit" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold text-xs uppercase tracking-wider px-8 py-3.5 rounded-lg shadow transition">
+                  Submit Factory Message
+                </button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- ================= VIDEO PREVIEW MODAL ================= -->
+  <div id="videoModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-charcoal-900 border border-white/20 rounded-2xl max-w-3xl w-full p-4 relative">
+      <button onclick="closeVideoModal()" class="absolute -top-10 right-0 text-white hover:text-gray-300 text-2xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="aspect-video w-full rounded-xl overflow-hidden bg-black flex items-center justify-center text-white relative">
+        <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover opacity-60">
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+          <div class="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center text-2xl shadow-xl animate-bounce">
+            <i class="fa-solid fa-play ml-1"></i>
+          </div>
+          <h4 class="font-display font-bold text-xl mt-4">Field Trials 2025: Heavy Pruning Mulching</h4>
+          <p class="text-xs text-gray-300 mt-1 max-w-md">Demonstration testing in high stone vineyard soils with EFGC 175 and ECO-16H Wood Chipper.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= VINEYARD NEWSLETTER SIGNUP STRIP ================= -->
+  <!-- (Clean, highly modern recreation inspired by the green field newsletter in reference) -->
+  <section class="relative py-16 bg-charcoal-950 text-white overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop" alt="Green agricultural vineyard rows background" class="absolute inset-0 w-full h-full object-cover opacity-25">
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-950/90 via-charcoal-950/90 to-brand-950/90"></div>
+    
+    <div class="relative max-w-4xl mx-auto px-4 text-center">
+      <span class="text-brand-accent text-xs font-bold uppercase tracking-widest">Industry Updates &amp; Engineering Bulletins</span>
+      <h2 class="font-display text-2xl sm:text-3xl font-extrabold uppercase mt-2 tracking-tight">
+        Subscribe to Agroverde Technical Dispatch
+      </h2>
+      <p class="text-xs sm:text-sm text-gray-300 mt-2 max-w-xl mx-auto font-light">
+        Receive new implement safety homologation notices, dealer seasonal pre-order discounts, and technical maintenance manuals.
+      </p>
+
+      <form onsubmit="handleNewsletterSubmit(event)" class="mt-8 max-w-xl mx-auto flex flex-col sm:flex-row gap-2">
+        <input 
+          type="email" 
+          required 
+          placeholder="Enter corporate or dealer email address..." 
+          class="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-xs text-white placeholder-gray-400 focus:bg-white/20 focus:outline-none focus:ring-2 focus:ring-brand-accent backdrop-blur"
+        >
+        <button 
+          type="submit" 
+          class="bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-lg shadow-lg transition active:scale-95"
+        >
+          Subscribe
+        </button>
+      </form>
+
+      <div class="mt-4 flex items-center justify-center gap-2 text-[11px] text-gray-400">
+        <input type="checkbox" required id="newsConsent" class="rounded text-brand-600">
+        <label for="newsConsent">I consent to receiving official engineering updates. No spam, unsubscribe anytime.</label>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PREMIUM MULTI-COLUMN FOOTER ================= -->
+  <footer class="bg-charcoal-950 text-gray-300 pt-16 pb-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+        
+        <!-- Col 1: Brand & Headquarter Details -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-brand-700 flex items-center justify-center text-white shadow-md">
+              <i class="fa-solid fa-wheat-awn text-lg text-emerald-300"></i>
+            </div>
+            <span class="font-display font-extrabold text-2xl tracking-tight text-white leading-none">
+              AGRO<span class="text-brand-accent">VERDE</span>
+            </span>
+          </div>
+          
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+            Agroverde European Agricultural Systems S.p.A. Specialized design and industrial manufacturing of tractor implements, flail mowers, rotary tillers, and forestry wood chippers.
+          </p>
+
+          <div class="text-xs text-gray-400 space-y-1 pt-1">
+            <p><strong class="text-gray-300">Registered Office:</strong> Via Industriale 42, 14055 Costigliole d'Asti (AT) - Italy</p>
+            <p><strong class="text-gray-300">Tax / VAT ID:</strong> IT 01548910054 &middot; REA AT-123464</p>
+            <p><strong class="text-gray-300">Share Capital:</strong> € 750,000.00 fully paid</p>
+          </div>
+
+          <!-- Social Icons -->
+          <div class="flex items-center space-x-3 pt-2">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="w-8 h-8 rounded-full bg-white/10 hover:bg-brand-600 flex items-center justify-center text-white transition text-xs">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="w-8 h-8 rounded-full bg-white/10 hover:bg-brand-600 flex items-center justify-center text-white transition text-xs">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="w-8 h-8 rounded-full bg-white/10 hover:bg-brand-600 flex items-center justify-center text-white transition text-xs">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" aria-label="YouTube" class="w-8 h-8 rounded-full bg-white/10 hover:bg-brand-600 flex items-center justify-center text-white transition text-xs">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Implements Range -->
+        <div>
+          <h4 class="font-display font-bold text-sm text-white uppercase tracking-wider mb-4">Machinery Range</h4>
+          <ul class="space-y-2 text-xs text-gray-400">
+            <li><a href="javascript:void(0)" onclick="filterAndOpenProducts('mowers')" class="hover:text-emerald-400 transition">Flail Mowers (EFGC Series)</a></li>
+            <li><a href="javascript:void(0)" onclick="filterAndOpenProducts('winter')" class="hover:text-emerald-400 transition">Hydraulic Snow Blades (SPN)</a></li>
+            <li><a href="javascript:void(0)" onclick="filterAndOpenProducts('woodchipper')" class="hover:text-emerald-400 transition">Wood Chippers (ECO-16H)</a></li>
+            <li><a href="javascript:void(0)" onclick="filterAndOpenProducts('rotary')" class="hover:text-emerald-400 transition">Side-Shift Rotary Tillers</a></li>
+            <li><a href="javascript:void(0)" onclick="filterAndOpenProducts('mowers')" class="hover:text-emerald-400 transition">ATV &amp; Quad Implements</a></li>
+            <li><a href="javascript:void(0)" onclick="filterAndOpenProducts('all')" class="hover:text-emerald-400 transition">Power Harrows &amp; Stone Buriers</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Quick Navigation -->
+        <div>
+          <h4 class="font-display font-bold text-sm text-white uppercase tracking-wider mb-4">Company &amp; Service</h4>
+          <ul class="space-y-2 text-xs text-gray-400">
+            <li><a href="javascript:void(0)" onclick="navigateTo('about')" class="hover:text-emerald-400 transition">About Our Factory</a></li>
+            <li><a href="javascript:void(0)" onclick="navigateTo('services')" class="hover:text-emerald-400 transition">OEM Spare Parts Ordering</a></li>
+            <li><a href="javascript:void(0)" onclick="navigateTo('catalogs')" class="hover:text-emerald-400 transition">Download 2025 PDF Catalogs</a></li>
+            <li><a href="javascript:void(0)" onclick="navigateTo('news')" class="hover:text-emerald-400 transition">Field Trials &amp; Trade Shows</a></li>
+            <li><a href="javascript:void(0)" onclick="navigateTo('contact')" class="hover:text-emerald-400 transition">Dealer Locator Map</a></li>
+            <li><a href="javascript:void(0)" onclick="openQuoteModal()" class="hover:text-emerald-400 transition font-semibold text-emerald-300">Request Commercial Quote</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: European Certifications (Visual recreation of ISO badges from screenshot) -->
+        <div>
+          <h4 class="font-display font-bold text-sm text-white uppercase tracking-wider mb-4">Certifications</h4>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3 p-2.5 rounded-lg bg-white/5 border border-white/10">
+              <div class="w-9 h-9 rounded bg-brand-800 flex items-center justify-center text-emerald-400 text-sm font-bold">
+                ISO
+              </div>
+              <div class="text-[11px]">
+                <p class="font-bold text-white">ISO 9001:2015</p>
+                <p class="text-gray-400">Certified Quality Standard</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 p-2.5 rounded-lg bg-white/5 border border-white/10">
+              <div class="w-9 h-9 rounded bg-brand-800 flex items-center justify-center text-emerald-400 text-sm font-bold">
+                IQNet
+              </div>
+              <div class="text-[11px]">
+                <p class="font-bold text-white">IQNet Association</p>
+                <p class="text-gray-400">International Recognition</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 p-2.5 rounded-lg bg-white/5 border border-white/10">
+              <div class="w-9 h-9 rounded bg-brand-800 flex items-center justify-center text-emerald-400 text-sm font-bold">
+                CE
+              </div>
+              <div class="text-[11px]">
+                <p class="font-bold text-white">2006/42/EC Homologation</p>
+                <p class="text-gray-400">European Machinery Safety</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+        <p>&copy; <span id="currentYear">2025</span> Agroverde European Agricultural Systems S.p.A. All rights reserved. Developed by Zannatul.</p>
+        <div class="flex items-center space-x-6">
+          <a href="javascript:void(0)" onclick="alert('Privacy Policy: Agroverde complies fully with EU Regulation 2016/679 (GDPR). Data is treated with highest security.')" class="hover:text-gray-300">Privacy Policy</a>
+          <a href="javascript:void(0)" onclick="alert('Cookie Settings: Only strictly necessary session tokens are enabled.')" class="hover:text-gray-300">Cookie Management</a>
+          <a href="javascript:void(0)" onclick="alert('Legal Notice: All implement designs, names and photos are proprietary engineering property.')" class="hover:text-gray-300">Legal Notice</a>
+          <a href="#mainHeader" class="text-brand-accent hover:underline flex items-center gap-1">
+            <span>Back to top</span> <i class="fa-solid fa-arrow-up"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= INLINE JAVASCRIPT ================= -->
+  <script>
+    // Product data registry for dynamic details
+    const productsDb = {
+      'efgc': {
+        title: 'EFGC Heavy Fixed Flail Mower & Mulcher',
+        subtitle: 'Heavy-duty steel chassis with forged hammers for vineyards, pastures, and pruned wood',
+        badge: 'Best Seller Agricultural Line',
+        bg: 'https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=2000&auto=format&fit=crop',
+        img: 'https://images.unsplash.com/photo-1530267981375-f0de937f5f13?q=80&w=800&auto=format&fit=crop'
+      },
+      'spn': {
+        title: 'SPN Hydraulic Snow Plow & Clearing Blade',
+        subtitle: 'Dual hydraulic orientation cylinders and shock-absorbing spring trip system for road tractors',
+        badge: 'Municipal Line &middot; Winter Series',
+        bg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQfEdSna4q0zp0d5bWNspfy6bYz3F4iWtscRZKrhXJ4ZmL3np1vU97NQY&s=10?q=80&w=2000&auto=format&fit=crop',
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQfEdSna4q0zp0d5bWNspfy6bYz3F4iWtscRZKrhXJ4ZmL3np1vU97NQY&s=10?q=80&w=800&auto=format&fit=crop'
+      },
+      'eco16h': {
+        title: 'ECO 16H Autonomous Hydraulic Wood Chipper',
+        subtitle: 'Independent oil tank and double hydraulically driven feeder rollers for 160 mm logs',
+        badge: 'Forestry &middot; Independent Flow',
+        bg: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=2000&auto=format&fit=crop',
+        img: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=800&auto=format&fit=crop'
+      },
+      'tl-tiller': {
+        title: 'TL Medium Side-Shift Rotary Tiller',
+        subtitle: 'Side mechanical/hydraulic shift for accurate orchard bed cultivation up to 18 cm depth',
+        badge: 'Soil Conditioning Series',
+        bg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcPl0N1idHijsF5HMCxUK1bZqbc55JUSVCF-BQTTV45-xleAd-GbTY6h1P&s=10?q=80&w=2000&auto=format&fit=crop',
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcPl0N1idHijsF5HMCxUK1bZqbc55JUSVCF-BQTTV45-xleAd-GbTY6h1P&s=10?q=80&w=800&auto=format&fit=crop'
+      }
+    };
+
+    // SPA Router
+    function navigateTo(pageId) {
+      // Hide all pages
+      const pages = document.querySelectorAll('.page-view');
+      pages.forEach(p => p.classList.remove('active'));
+
+      // Show targeted page
+      const target = document.getElementById('view-' + pageId);
+      if (target) {
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Update Nav active indicator
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        if (link.getAttribute('data-page') === pageId) {
+          link.classList.add('border-b-2', 'border-brand-600', 'font-semibold', 'text-brand-700');
+        } else {
+          link.classList.remove('border-b-2', 'border-brand-600', 'font-semibold', 'text-brand-700');
+        }
+      });
+    }
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const icon = document.getElementById('menuIcon');
+      menu.classList.toggle('hidden');
+      if (menu.classList.contains('hidden')) {
+        icon.className = 'fa-solid fa-bars-staggered text-xl';
+      } else {
+        icon.className = 'fa-solid fa-xmark text-xl';
+      }
+    }
+
+    // Modal controls
+    function toggleSearchModal() {
+      const modal = document.getElementById('searchModal');
+      modal.classList.toggle('hidden');
+      if (!modal.classList.contains('hidden')) {
+        setTimeout(() => document.getElementById('liveSearchInput').focus(), 50);
+      }
+    }
+
+    function openQuoteModal() {
+      document.getElementById('quoteModal').classList.remove('hidden');
+    }
+
+    function closeQuoteModal() {
+      document.getElementById('quoteModal').classList.add('hidden');
+    }
+
+    function openVideoModal() {
+      document.getElementById('videoModal').classList.remove('hidden');
+    }
+
+    function closeVideoModal() {
+      document.getElementById('videoModal').classList.add('hidden');
+    }
+
+    function quickQuoteFor(productName) {
+      openQuoteModal();
+      const select = document.getElementById('quoteCategorySelect');
+      if (select) {
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].text.includes(productName.split(' ')[0])) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    }
+
+    // Show Product Details dynamically
+    function showProductDetails(prodKey) {
+      const data = productsDb[prodKey];
+      if (data) {
+        document.getElementById('detailTitle').textContent = data.title;
+        document.getElementById('detailSubtitle').textContent = data.subtitle;
+        document.getElementById('detailBreadcrumb').textContent = data.title;
+        document.getElementById('detailBadge').textContent = data.badge;
+        document.getElementById('detailMainImg').src = data.img;
+        document.getElementById('detailHeroBg').src = data.bg;
+      }
+      navigateTo('product-detail');
+    }
+
+    // Product Gallery switch
+    function changeDetailImg(src) {
+      document.getElementById('detailMainImg').src = src;
+    }
+
+    // Product Detail Tabs
+    function switchTab(tabId, btn) {
+      ['specs', 'features', 'warranty'].forEach(t => {
+        document.getElementById('tabContent-' + t).classList.add('hidden');
+      });
+      document.getElementById('tabContent-' + tabId).classList.remove('hidden');
+
+      const buttons = btn.parentElement.querySelectorAll('button');
+      buttons.forEach(b => {
+        b.classList.remove('tab-active', 'border-b-2', 'border-brand-600', 'text-brand-600');
+        b.classList.add('text-gray-500');
+      });
+      btn.classList.add('tab-active', 'border-b-2', 'border-brand-600', 'text-brand-600');
+      btn.classList.remove('text-gray-500');
+    }
+
+    // Catalog filtering
+    function filterCatalog(category, button) {
+      const items = document.querySelectorAll('.prod-item');
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      // Update button appearance
+      const btns = document.querySelectorAll('.prod-filter-btn');
+      btns.forEach(b => {
+        b.classList.remove('bg-brand-700', 'text-white');
+        b.classList.add('bg-gray-100', 'text-gray-700');
+      });
+      if (button) {
+        button.classList.remove('bg-gray-100', 'text-gray-700');
+        button.classList.add('bg-brand-700', 'text-white');
+      }
+    }
+
+    function filterAndOpenProducts(category) {
+      navigateTo('products');
+      const buttons = document.querySelectorAll('.prod-filter-btn');
+      let targetBtn = buttons[0];
+      if (category === 'mowers') targetBtn = buttons[1];
+      if (category === 'rotary') targetBtn = buttons[2];
+      if (category === 'woodchipper') targetBtn = buttons[3];
+      if (category === 'winter') targetBtn = buttons[4];
+      filterCatalog(category, targetBtn);
+    }
+
+    function filterByInput() {
+      const q = document.getElementById('catalogSearchInput').value.toLowerCase();
+      const items = document.querySelectorAll('.prod-item');
+      items.forEach(item => {
+        const text = item.innerText.toLowerCase();
+        if (text.includes(q)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Modal Live search
+    function handleLiveSearch() {
+      const query = document.getElementById('liveSearchInput').value.toLowerCase();
+      const resContainer = document.getElementById('searchResults');
+      if (query.trim().length === 0) {
+        resContainer.innerHTML = '<p class="py-3 text-xs text-gray-400">Quick hits: <em>SPN Snow Blade</em>, <em>EFGC Heavy Shredder</em>, <em>ECO-16H Wood Chipper</em>, <em>Hydraulic PTO Kits</em></p>';
+        return;
+      }
+      
+      const searchItems = [
+        { name: 'EFGC 105 - 175 Fixed Flail Mower', cat: 'Flail Mowers', id: 'efgc' },
+        { name: 'SPN 130 - 200 Hydraulic Snow Blade', cat: 'Winter Implements', id: 'spn' },
+        { name: 'ECO-16H Disc Autonomous Wood Chipper', cat: 'Forestry & Pruning', id: 'eco16h' },
+        { name: 'TL Side Shift Medium Rotary Tiller', cat: 'Soil Preparation', id: 'tl-tiller' },
+        { name: 'Original Comer 540 RPM Gearbox with Clutch', cat: 'Spare Parts', id: 'efgc' }
+      ];
+
+      const matches = searchItems.filter(item => item.name.toLowerCase().includes(query) || item.cat.toLowerCase().includes(query));
+      
+      if (matches.length === 0) {
+        resContainer.innerHTML = '<p class="py-4 text-xs text-gray-500">No machinery match found. Call our Asti sales branch at +39 0141 876 220 for custom specs.</p>';
+      } else {
+        resContainer.innerHTML = matches.map(m => `
+          <div onclick="toggleSearchModal(); showProductDetails('${m.id}')" class="py-2.5 px-2 hover:bg-brand-50 cursor-pointer flex items-center justify-between rounded">
+            <div>
+              <p class="font-bold text-xs text-charcoal-900">${m.name}</p>
+              <p class="text-[10px] text-brand-600">${m.cat}</p>
+            </div>
+            <span class="text-xs text-brand-700 font-semibold">Inspect &rarr;</span>
+          </div>
+        `).join('');
+      }
+    }
+
+    // Form Submissions Feedback
+    function handleQuoteSubmit(e) {
+      e.preventDefault();
+      alert('Thank you! Your quotation request has been assigned to our European Sales Office. An official quotation with freight rates will be dispatched to your email within 4 hours.');
+      closeQuoteModal();
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      alert('Inquiry received! Our regional technical manager will reach out shortly.');
+      e.target.reset();
+    }
+
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      alert('Subscription confirmed! You will receive our next quarterly engineering and catalog dispatch.');
+      e.target.reset();
+    }
+
+    function downloadMockPDF(docName) {
+      alert('Initiating download: ' + docName + '.pdf\nDocument verified with ISO 9001 European Agricultural homologation standards.');
+    }
+
+    function switchLang(code) {
+      document.getElementById('langBtn').innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-500"></span> ${code} <i class="fa-solid fa-chevron-down text-[9px] ml-0.5"></i>`;
+    }
+
+    // Set Copyright Year dynamically
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
